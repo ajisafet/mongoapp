@@ -32,3 +32,20 @@ spec:
             secretKeyRef:
               name: mongodb-secret
               key: mongodb-password
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: mongodb-dep
+  name: mongodb-dep
+  namespace: default
+spec:
+  ports:
+  - port: 30000
+    protocol: TCP
+    targetPort: 27017
+  selector:
+    app: mongodb-dep
+  type: ClusterIP
+  
