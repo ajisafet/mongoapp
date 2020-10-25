@@ -38,7 +38,7 @@ kind: Service
 metadata:
   labels:
     app: mongodb-dep
-  name: mongodb-dep
+  name: mongodb-dep-svc
   namespace: default
 spec:
   ports:
@@ -48,4 +48,3 @@ spec:
   selector:
     app: mongodb-dep
   type: ClusterIP
-  
